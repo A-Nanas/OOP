@@ -1,5 +1,5 @@
 package com.oop.first;
-public class heapSort {
+public class HeapSort {
     /**
      * Support method for sort method; converts into binary heap
      * @param a the array, we're going to sort
