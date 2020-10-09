@@ -1,16 +1,16 @@
-import com.oop.first.heapSort;
+import com.oop.first.HeapSort;
 import org.junit.jupiter.api.Test;
 import java.util.Arrays;
 import java.util.Random;
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
-class heapSortTest {
+class HeapSortTest {
 
     @Test
     void emptyTest() {
         int[] ar = {};
         int[] expected = {};
-        heapSort.sort(ar);
+        HeapSort.sort(ar);
         assertArrayEquals(expected, ar);
     }
 
@@ -18,7 +18,7 @@ class heapSortTest {
     void normalTest(){
         int[] ar = {1, 2, 6, 7, 10, 200, 21, 1000, 5, 3};
         int[] expected ={1, 2, 3, 5, 6, 7, 10, 21, 200, 1000};
-        heapSort.sort(ar);
+        HeapSort.sort(ar);
         assertArrayEquals(expected, ar);
     }
 
@@ -26,7 +26,7 @@ class heapSortTest {
     void duplicatesTest() {
         int ar[] = {1, 2, 3, 3, 4, 2, 1};
         int expected[] = {1, 1, 2, 2, 3, 3, 4};
-        heapSort.sort(ar);
+        HeapSort.sort(ar);
         assertArrayEquals(expected,ar);
     }
 
@@ -34,7 +34,7 @@ class heapSortTest {
     void alreadySortedTest() {
         int[] ar = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11};
         int[] expected = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11};
-        heapSort.sort(ar);
+        HeapSort.sort(ar);
         assertArrayEquals(expected,ar);
     }
 
@@ -42,7 +42,7 @@ class heapSortTest {
     void invertedTest() {
         int[] ar = {6, 5, 4, 3, 2, 1, 0};
         int[] expected = {0, 1, 2, 3, 4, 5, 6};
-        heapSort.sort(ar);
+        HeapSort.sort(ar);
         assertArrayEquals(expected,ar);
     }
 
@@ -50,7 +50,7 @@ class heapSortTest {
     void negativeTest() {
         int[] ar = {-1, -2, -7, -9, -4};
         int[] expected = {-9, -7, -4, -2, -1};
-        heapSort.sort(ar);
+        HeapSort.sort(ar);
         assertArrayEquals(expected,ar);
     }
 
@@ -64,7 +64,7 @@ class heapSortTest {
             ar[i] = generated[i];
         }
         Arrays.sort(ar);
-        heapSort.sort(generated);
+        HeapSort.sort(generated);
         assertArrayEquals(generated, ar);
     }
 }
