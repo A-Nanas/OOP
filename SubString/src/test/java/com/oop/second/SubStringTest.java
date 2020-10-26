@@ -165,22 +165,23 @@ class SubStringTest {
     void bigTest() {
         String s = "seventh_test.txt";
         FileWriter myWriter = null;
+        int[] arr = new int[1000];
         try {
             myWriter = new FileWriter("seventh_test.txt");
-            for (int i = 0; i < 20000000; i++) {
-                myWriter.write("nabcabcabchcbajdklfababcabc jdklfababcabc nabcabcabchcbajdklfababcabc jdklf");
+            for (int i = 0; i < 300; i++){
+                myWriter.write("nabcabcabc");
+                arr[i] = i * 10;
+            }
+            for (int i = 0; i < 160000000; i++) {
+                myWriter.write("mabcabcabchcbajdklfababcabc jdklfababcabc mabaabcabchcbajdklfababcabc jdklf");
             }
             myWriter.close();
         } catch (IOException e) {
             e.printStackTrace();
         }
         SubString.createFile(s);
-        int[] arr = new int[1000];
-//        arr[0] = 1;
-//        arr[1] = 4;
-//        arr[2] = 21;
         int[] a = new int[1000];
-        String sub = "abcabggg";
+        String sub = "nabca";
 
         SubString.find(s, a, sub);
         //System.out.println(a[0]);
