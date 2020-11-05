@@ -6,23 +6,18 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class SubStringTest {
 
+    SubString test = new SubString();
+    Files creation = new Files();
+
     @Test
     void emptyTest() {
         String s = "first_test.txt";
-        /*FileWriter myWriter = null;
-        try {
-            myWriter = new FileWriter("filename.txt");
-            myWriter.write("");
-            myWriter.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }*/
-        SubString.createFile(s);
+        creation.createFile(s);
         int[] arr = {};
         int[] a = {};
         String sub = "3";
 
-        SubString.find(s, a, sub);
+        test.find(s, a, sub);
         assertArrayEquals(arr, a);
     }
 
@@ -37,12 +32,12 @@ class SubStringTest {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        SubString.createFile(s);
+        creation.createFile(s);
         int[] arr = {};
         int[] a = {};
         String sub = "3";
 
-        SubString.find(s, a, sub);
+        test.find(s, a, sub);
         assertArrayEquals(arr, a);
     }
 
@@ -57,14 +52,13 @@ class SubStringTest {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        SubString.createFile(s);
+        creation.createFile(s);
         int[] arr = new int[1000];
         arr[0] = 0;
         int[] a = new int[1000];
         String sub = "a";
 
-        SubString.find(s, a, sub);
-        //System.out.println(a[0]);
+        test.find(s, a, sub);
         assertArrayEquals(arr, a);
     }
 
@@ -79,15 +73,14 @@ class SubStringTest {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        SubString.createFile(s);
+        creation.createFile(s);
         int[] arr = new int[1000];
         arr[0] = 0;
         arr[1] = 5;
         int[] a = new int[1000];
         String sub = "a";
 
-        SubString.find(s, a, sub);
-        //System.out.println(a[0]);
+        test.find(s, a, sub);
         assertArrayEquals(arr, a);
     }
 
@@ -102,15 +95,14 @@ class SubStringTest {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        SubString.createFile(s);
+        creation.createFile(s);
         int[] arr = new int[1000];
         arr[0] = 0;
         arr[1] = 5;
         int[] a = new int[1000];
         String sub = "abc";
 
-        SubString.find(s, a, sub);
-        //System.out.println(a[0]);
+        test.find(s, a, sub);
         assertArrayEquals(arr, a);
     }
 
@@ -125,15 +117,14 @@ class SubStringTest {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        SubString.createFile(s);
+        creation.createFile(s);
         int[] arr = new int[1000];
         arr[0] = 0;
         arr[1] = 2;
         int[] a = new int[1000];
         String sub = "aba";
 
-        SubString.find(s, a, sub);
-        //System.out.println(a[0]);
+        test.find(s, a, sub);
         assertArrayEquals(arr, a);
     }
 
@@ -148,7 +139,7 @@ class SubStringTest {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        SubString.createFile(s);
+        creation.createFile(s);
         int[] arr = new int[1000];
         arr[0] = 1;
         arr[1] = 4;
@@ -156,8 +147,7 @@ class SubStringTest {
         int[] a = new int[1000];
         String sub = "abcab";
 
-        SubString.find(s, a, sub);
-        //System.out.println(a[0]);
+        test.find(s, a, sub);
         assertArrayEquals(arr, a);
     }
 
@@ -179,12 +169,12 @@ class SubStringTest {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        SubString.createFile(s);
+
+        creation.createFile(s);
         int[] a = new int[1000];
         String sub = "nabca";
 
-        SubString.find(s, a, sub);
-        //System.out.println(a[0]);
+        test.find(s, a, sub);
         assertArrayEquals(arr, a);
     }
 }
