@@ -1,9 +1,10 @@
 package com.oop.second;
 
 public class BufferEntry {
-    int z_function;
-    int symbol_code;
-    int index;
+    public int z_function;
+    public int symbol_code;
+    public int index;
+
     public void makeZero(int i, BufferEntry[] buffer){
         buffer[i].z_function = 0;
         buffer[i].symbol_code = 0;

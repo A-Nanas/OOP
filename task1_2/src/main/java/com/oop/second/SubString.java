@@ -3,16 +3,17 @@ import java.io.*;
 
 public class SubString {
 
-    BufferEntry[] buffer;
-    BufferEntry buf = new BufferEntry();
-
     public void find(String file_name, int[] a, String sub){
         int length = sub.length();
         int beg = 0;
         int amount = 0;
         int index = 0;
         int count = 0;
-        buffer = new BufferEntry[length * 4 + 10];
+        BufferEntry[] buffer = new BufferEntry[length * 4 + 10];
+        BufferEntry buf = new BufferEntry();
+        for(int i = 0; i < 4 * sub.length() + 10; i++){
+            buffer[i] = new BufferEntry();
+        }
         //считываем первый символ
         BufferedReader reader = null;
         int symbol = 0;
@@ -32,6 +33,7 @@ public class SubString {
                 for (int i = amount; i < sub.length() && symbol != -1; i++) {
                 //записываем символы в массив и сразу вычияляем z - функцию
                 //пока не считаем length символов или не дойдем до конца строки
+
                     buffer[i + beg].z_function = 0;
                     buffer[i + beg].symbol_code = symbol;
                     buffer[i + beg].index = index;
