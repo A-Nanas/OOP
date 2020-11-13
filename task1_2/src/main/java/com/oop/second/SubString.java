@@ -31,9 +31,6 @@ public class SubString {
                     }
                 }
                 for (int i = amount; i < sub.length() && symbol != -1; i++) {
-                //записываем символы в массив и сразу вычияляем z - функцию
-                //пока не считаем length символов или не дойдем до конца строки
-
                     buffer[i + beg].z_function = 0;
                     buffer[i + beg].symbol_code = symbol;
                     buffer[i + beg].index = index;
@@ -66,7 +63,6 @@ public class SubString {
                     amount--;
                     beg++;
                 }
-            //если буфер заполнен на половину, сдвигаем данные в нём в начало
                 if (beg >= sub.length() * 2) {
                     buf.moveToBegin(amount, beg, buffer);
                     beg = 0;
