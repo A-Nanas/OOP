@@ -1,21 +1,37 @@
 package com.oop.second;
 
 public class BufferEntry {
-    public int z_function;
-    public int symbol_code;
-    public int index;
+    private int z_function;
+    private int symbol_code;
+    private int index;
 
-    public void makeZero(int i, BufferEntry[] buffer){
-        buffer[i].z_function = 0;
-        buffer[i].symbol_code = 0;
-        buffer[i].index = 0;
+    public void makeZero(){
+        this.z_function = 0;
+        this.symbol_code = 0;
+        this.index = 0;
     }
 
-    public void moveToBegin(int amount, int beg, BufferEntry[] buffer){ //сдвигает все символы в буфере в начало
-        for(int i = 0; i < amount; i++){
-            buffer[i].z_function = buffer[i + beg].z_function;
-            buffer[i].symbol_code = buffer[i + beg].symbol_code;
-            buffer[i].index = buffer[i + beg].index;
-        }
+    public int getZ_function() {
+        return z_function;
+    }
+
+    public void setZ_function(int z_function) {
+        this.z_function = z_function;
+    }
+
+    public int getSymbol_code() {
+        return symbol_code;
+    }
+
+    public void setSymbol_code(int symbol_code) {
+        this.symbol_code = symbol_code;
+    }
+
+    public int getIndex() {
+        return index;
+    }
+
+    public void setIndex(int index) {
+        this.index = index;
     }
 }
