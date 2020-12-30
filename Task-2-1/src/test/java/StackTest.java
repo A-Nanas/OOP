@@ -15,8 +15,8 @@ public class StackTest {
         stack.pop();
         stack.count();
 
-        int var = stack.pop();
-        Assert.assertEquals(2, var);
+        int variable = stack.pop();
+        Assert.assertEquals(2, variable);
     }
 
     @Test

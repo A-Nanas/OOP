@@ -20,8 +20,8 @@ public class Stack <T> implements Iterable<T>{
         storage = new Object[SIZE];
     }
 
-    public StackIterator<T> iterator() {
-        return new StackIterator<>(this);
+    public StackIterator iterator() {
+        return new StackIterator();
     }
 
     public void push(T inputValue) {
@@ -40,6 +40,7 @@ public class Stack <T> implements Iterable<T>{
         T result = (T)storage[top];
         if (top <= storage.length / 4) {
             shrinkStorage();
+
         }
         return result;
     }
@@ -56,25 +57,24 @@ public class Stack <T> implements Iterable<T>{
         storage = Arrays.copyOf(storage, storage.length / 2);
     }
 
-    static class StackIterator<T> implements Iterator<T> {
-        final private Stack<T> stack;
-        private int current_idx;
+    public class StackIterator implements Iterator {
+        final private Stack stack = new Stack();
+        private int currentIdx;
 
-        public StackIterator(Stack<T> s) {
-            stack = s;
-            current_idx = stack.count() - 1;
+        public StackIterator() {
+            currentIdx = stack.count() - 1;
         }
 
         public boolean hasNext() {
-            return current_idx >= 0;
+            return currentIdx >= 0;
         }
 
-        public T next() {
+        public Object next() {
             if (!hasNext()) {
                 throw new NoSuchElementException();
             }
-            current_idx--;
-            return (T)stack.storage[current_idx + 1];
+            currentIdx--;
+            return stack.storage[currentIdx + 1];
         }
         public void remove() {
             throw new UnsupportedOperationException();
