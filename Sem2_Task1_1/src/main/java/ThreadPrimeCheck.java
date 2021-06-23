@@ -2,6 +2,7 @@ import java.util.Arrays;
 
 public class ThreadPrimeCheck {
     //Returns the number of processors available to the Java virtual machine. (can be optional)
+    //This method returns the maximum number of processors available to the virtual machine; never smaller than one
     static int THREADS = Runtime.getRuntime().availableProcessors();
     //Our prime numbers "flag".
     static boolean hasNotPrime = false;
@@ -14,7 +15,7 @@ public class ThreadPrimeCheck {
      * @throws Exception
      */
     public static boolean threadRun(long[] array, int numberOfThreads) throws Exception {
-        if (numberOfThreads > 0 && numberOfThreads < THREADS) THREADS = numberOfThreads;
+        if (numberOfThreads > 0 && numberOfThreads < THREADS) { THREADS = numberOfThreads; }
         Thread[] t = new Thread[THREADS];
         arr = Arrays.copyOf(array, array.length);
 
@@ -34,6 +35,8 @@ public class ThreadPrimeCheck {
         return arr;
     }
 
+    //synchronized
+    //это ключевое слово, которое позволяет заблокировать доступ к методу, если его уже использует другой поток.
     public synchronized static void setHasNotPrime() {
         hasNotPrime = true;
     }

@@ -1,5 +1,9 @@
+
+
+// Sequential run of prime check.
+
 public class SimplePrimeCheck {
-    //Our prime numbers "flag".
+    //Prime numbers flag.
     static boolean hasNotPrime = false;
 
     public static boolean sequentialRun(long[] array) {
@@ -9,6 +13,9 @@ public class SimplePrimeCheck {
                 break;
             }
         }
+        /**
+        @return true if the number is not prime, else false
+         */
         return hasNotPrime;
     }
 }

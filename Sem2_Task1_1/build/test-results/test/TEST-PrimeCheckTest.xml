@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="PrimeCheckTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-05-21T03:08:57" hostname="LAPTOP-JIES4AL0" time="0.06">
+<testsuite name="PrimeCheckTest" tests="9" skipped="0" failures="0" errors="0" timestamp="2021-06-23T11:07:53" hostname="DESKTOP-1CQV6J1" time="24.452">
   <properties/>
-  <testcase name="exampleSecondTest()" classname="PrimeCheckTest" time="0.06"/>
+  <testcase name="simpleTest()" classname="PrimeCheckTest" time="4.151"/>
+  <testcase name="exampleSecondTest()" classname="PrimeCheckTest" time="0.003"/>
+  <testcase name="streamTest()" classname="PrimeCheckTest" time="1.176"/>
+  <testcase name="threadTest16()" classname="PrimeCheckTest" time="2.729"/>
+  <testcase name="exampleFirstTest()" classname="PrimeCheckTest" time="0.006"/>
+  <testcase name="threadTest2()" classname="PrimeCheckTest" time="3.974"/>
+  <testcase name="threadTest3()" classname="PrimeCheckTest" time="4.094"/>
+  <testcase name="threadTest4()" classname="PrimeCheckTest" time="4.07"/>
+  <testcase name="threadTest8()" classname="PrimeCheckTest" time="4.23"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

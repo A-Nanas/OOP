@@ -1,9 +1,9 @@
-SimplePrimeCheck.java
- SimplePrimeCheck
-ThreadPrimeCheck.java
- PrimeRun
- ThreadPrimeCheck
-Validation.java
- Validation
-StreamPrimeCheck.java
- StreamPrimeCheck
+com/oop/task_2_1_1/SimplePrimeCheck.java
+ com.oop.task_2_1_1.SimplePrimeCheck
+com/oop/task_2_1_1/ThreadPrimeCheck.java
+ com.oop.task_2_1_1.PrimeRun
+ com.oop.task_2_1_1.ThreadPrimeCheck
+com/oop/task_2_1_1/StreamPrimeCheck.java
+ com.oop.task_2_1_1.StreamPrimeCheck
+com/oop/task_2_1_1/Validation.java
+ com.oop.task_2_1_1.Validation

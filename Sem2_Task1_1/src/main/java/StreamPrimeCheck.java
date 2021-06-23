@@ -13,14 +13,23 @@ public class StreamPrimeCheck {
     public static boolean streamRun(Long[] array) {
         List<Long> list = Arrays.asList(array);
 
-        Optional<Long> n = list
+        hasNotPrime = list
                 .parallelStream()
-                .filter(Validation::isNotPrime)
-                .findFirst();
+                .anyMatch(Validation::isNotPrime);
 
-        if (n.isPresent()) {
-            hasNotPrime = true;
-        }
+        // hasNotPrime = list
+        //         .parallelStream()
+        //         .filter(Validation::isNotPrime)
+        //         .isPresent();
+        //
+        // Optional<Long> n = list
+        //         .parallelStream()
+        //         .filter(Validation::isNotPrime)
+        //         .findFirst();
+        //
+        // if (n.isPresent()) {
+        //     hasNotPrime = true;
+        // }
         return hasNotPrime;
     }
 }
