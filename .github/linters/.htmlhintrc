@@ -13,7 +13,7 @@
   "title-require": true,
   "alt-require": true,
   "doctype-html5": true,
-  "id-class-value": "dash",
+  "id-class-value": false,
   "style-disabled": false,
   "inline-style-disabled": false,
   "inline-script-disabled": false,
@@ -21,5 +21,5 @@
   "id-class-ad-disabled": false,
   "href-abs-or-rel": false,
   "attr-unsafe-chars": true,
-  "head-script-disabled": true
+  "head-script-disabled": false
 }
