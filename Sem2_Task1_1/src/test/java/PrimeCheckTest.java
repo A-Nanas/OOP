@@ -1,9 +1,11 @@
-import com.oop.task_2_1_1.*;
+import com.oop.task_2_1_1.StreamPrimeCheck;
+import com.oop.task_2_1_1.SimplePrimeCheck;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class PrimeCheckTest {
-    private final long[] testArray = {2147483647L, 514229L, 433494437L, 1336337L, 4477457L, 5308417L, 8503057L, 9834497L, 29986577L, 40960001L, 45212177L, 59969537L, 65610001L, 126247697L, 193877777L};
+    private final long[] testArray = {2147483647L, 514229L, 433494437L, 1336337L, 4477457L, 5308417L, 8503057L,
+            9834497L, 29986577L, 40960001L, 45212177L, 59969537L, 65610001L, 126247697L, 193877777L};
     private long[] enlargedTestArray = new long[100000];
 
     public void arrayIncreasing() {

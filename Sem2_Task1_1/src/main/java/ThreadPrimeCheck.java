@@ -3,10 +3,10 @@ import java.util.Arrays;
 public class ThreadPrimeCheck {
     //Returns the number of processors available to the Java virtual machine. (can be optional)
     //This method returns the maximum number of processors available to the virtual machine; never smaller than one
-    static int THREADS = Runtime.getRuntime().availableProcessors();
+    static int threads = Runtime.getRuntime().availableProcessors();
     //Our prime numbers "flag".
-    static boolean hasNotPrime = false;
-    public static long[] arr;
+    private static boolean hasNotPrime = false;
+    private static long[] arr;
 
     /**
      * @param array           to verify
@@ -14,19 +14,20 @@ public class ThreadPrimeCheck {
      * @return has it prime or not
      * @throws Exception
      */
-    public static boolean threadRun(long[] array, int numberOfThreads) throws Exception {
-        if (numberOfThreads > 0 && numberOfThreads < THREADS) { THREADS = numberOfThreads; }
-        Thread[] t = new Thread[THREADS];
+    public static boolean threadRun(final long[] array,final int numberOfThreads) throws Exception {
+        if (numberOfThreads > 0 && numberOfThreads < threads) { threads = numberOfThreads; }
+        Thread[] t = new Thread[threads];
         arr = Arrays.copyOf(array, array.length);
 
-        for (int i = 0; i < THREADS; i++) {
+        for (int i = 0; i < threads; i++) {
             t[i] = new Thread(new PrimeRun(i));
             t[i].start();
         }
 
         // to force one thread to wait for another thread to finish.
-        for (int i = 0; i < THREADS; i++)
+        for (int i = 0; i < threads; i++) {
             t[i].join();
+        }
 
         return hasNotPrime;
     }
@@ -44,15 +45,15 @@ public class ThreadPrimeCheck {
 
 class PrimeRun implements Runnable {
     final long[] array = ThreadPrimeCheck.getArray();
-    final int ID;
+    final int id;
 
-    public PrimeRun(int i) {
-        ID = i;
+    public PrimeRun(final int i) {
+        id = i;
     }
 
     public void run() {
         for (long l : array) {
-            if (l % ThreadPrimeCheck.THREADS == ID && Validation.isNotPrime(l)) {
+            if (l % ThreadPrimeCheck.threads == id && Validation.isNotPrime(l)) {
                 ThreadPrimeCheck.setHasNotPrime();
                 break;
             }
