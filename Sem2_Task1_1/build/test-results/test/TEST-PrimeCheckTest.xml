@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="PrimeCheckTest" tests="9" skipped="0" failures="0" errors="0" timestamp="2021-06-23T12:50:30" hostname="DESKTOP-1CQV6J1" time="23.772">
+<testsuite name="PrimeCheckTest" tests="9" skipped="0" failures="0" errors="0" timestamp="2021-06-23T13:02:37" hostname="DESKTOP-1CQV6J1" time="25.832">
   <properties/>
-  <testcase name="simpleTest()" classname="PrimeCheckTest" time="4.154"/>
+  <testcase name="simpleTest()" classname="PrimeCheckTest" time="4.139"/>
   <testcase name="exampleSecondTest()" classname="PrimeCheckTest" time="0.004"/>
-  <testcase name="streamTest()" classname="PrimeCheckTest" time="1.118"/>
-  <testcase name="threadTest16()" classname="PrimeCheckTest" time="2.654"/>
+  <testcase name="streamTest()" classname="PrimeCheckTest" time="1.196"/>
+  <testcase name="threadTest16()" classname="PrimeCheckTest" time="2.743"/>
   <testcase name="exampleFirstTest()" classname="PrimeCheckTest" time="0.003"/>
-  <testcase name="threadTest2()" classname="PrimeCheckTest" time="4.027"/>
-  <testcase name="threadTest3()" classname="PrimeCheckTest" time="3.926"/>
-  <testcase name="threadTest4()" classname="PrimeCheckTest" time="3.939"/>
-  <testcase name="threadTest8()" classname="PrimeCheckTest" time="3.926"/>
+  <testcase name="threadTest2()" classname="PrimeCheckTest" time="4.787"/>
+  <testcase name="threadTest3()" classname="PrimeCheckTest" time="5.003"/>
+  <testcase name="threadTest4()" classname="PrimeCheckTest" time="3.98"/>
+  <testcase name="threadTest8()" classname="PrimeCheckTest" time="3.936"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

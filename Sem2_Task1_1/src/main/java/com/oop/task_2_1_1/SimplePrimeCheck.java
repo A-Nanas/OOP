@@ -4,20 +4,16 @@ package com.oop.task_2_1_1;
 
 public class SimplePrimeCheck {
     //Prime numbers flag.
-    private static boolean hasNotPrime = false;
+    static boolean hasNotPrime = false;
 
-    public static boolean sequentialRun(long[] array) {
+    public static boolean sequentialRun(final long[] array) {
         for (int i = 0; i < array.length; i++) {
             if (Validation.isNotPrime(array[i])) {
                 hasNotPrime = true;
                 break;
             }
         }
-        /**
-        @return true if the number is not prime, else false
-         */
+        //@return true if the number is not prime, else false
         return hasNotPrime;
     }
 }
-
-

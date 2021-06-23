@@ -7,7 +7,7 @@ public class StreamPrimeCheck {
     //Our prime numbers "flag".
     static boolean hasNotPrime = false;
 
-    public static boolean streamRun(Long[] array) {
+    public static boolean streamRun(final Long[] array) {
         List<Long> list = Arrays.asList(array);
 
         hasNotPrime = list
