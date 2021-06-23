@@ -14,8 +14,10 @@ public class ThreadPrimeCheck {
      * @return has it prime or not
      * @throws Exception
      */
-    public static boolean threadRun(final long[] array,final int numberOfThreads) throws Exception {
-        if (numberOfThreads > 0 && numberOfThreads < threads) { threads = numberOfThreads; }
+    public static boolean threadRun(final long[] array, final int numberOfThreads) throws Exception {
+        if (numberOfThreads > 0 && numberOfThreads < threads) {
+            threads = numberOfThreads;
+        }
         Thread[] t = new Thread[threads];
         arr = Arrays.copyOf(array, array.length);
 
@@ -38,7 +40,7 @@ public class ThreadPrimeCheck {
 
     //synchronized
     //это ключевое слово, которое позволяет заблокировать доступ к методу, если его уже использует другой поток.
-    public synchronized static void setHasNotPrime() {
+    public static synchronized void setHasNotPrime() {
         hasNotPrime = true;
     }
 }

@@ -1,7 +1,9 @@
 import com.oop.task_2_1_1.StreamPrimeCheck;
+import com.oop.task_2_1_1.ThreadPrimeCheck;
 import com.oop.task_2_1_1.SimplePrimeCheck;
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class PrimeCheckTest {
     private final long[] testArray = {2147483647L, 514229L, 433494437L, 1336337L, 4477457L, 5308417L, 8503057L,

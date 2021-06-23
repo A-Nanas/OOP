@@ -7,12 +7,12 @@ com/oop/task_2_1_1/StreamPrimeCheck.java
  com.oop.task_2_1_1.StreamPrimeCheck
 com/oop/task_2_1_1/Validation.java
  com.oop.task_2_1_1.Validation
-Validation.java
- Validation
 SimplePrimeCheck.java
  SimplePrimeCheck
 ThreadPrimeCheck.java
  PrimeRun
  ThreadPrimeCheck
+Validation.java
+ Validation
 StreamPrimeCheck.java
  StreamPrimeCheck
