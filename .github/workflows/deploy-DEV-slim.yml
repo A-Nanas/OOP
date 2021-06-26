@@ -18,7 +18,7 @@
 #############################
 on:
   push:
-    branches-ignore: [task_2_1_1]
+    branches-ignore: [task_2_1_2]
   pull_request:
     branches-ignore: [ ]
 
