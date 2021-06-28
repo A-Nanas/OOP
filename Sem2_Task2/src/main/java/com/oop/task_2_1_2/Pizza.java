@@ -17,8 +17,8 @@ public final class Pizza {
     long timeWasOrdered;
     Statuses statuses;
 
-    Pizza(final int id) {
-        this.id = id;
+    Pizza(final int idGot) {
+        this.id = idGot;
         statuses = Statuses.ORDERED;
         timeWasOrdered = System.currentTimeMillis();
     }
