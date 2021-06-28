@@ -55,17 +55,13 @@ public final class Baker implements Runnable {
     public void run() {
         while (employment.ordersStillCome || (!employment.orderOfRequests.isEmpty())) {
             try {
-                try {
-                    Pizza piz;
-                    piz = employment.orderOfRequests.take();
-                    if (piz != null) {
-                        this.bake(piz);
-                        this.putToWarehouse(piz);
-                    }
-                } catch (InterruptedException f) {
-                    return;
+                Pizza piz;
+                piz = employment.orderOfRequests.take();
+                if (piz != null) {
+                    this.bake(piz);
+                    this.putToWarehouse(piz);
                 }
-            } catch (NoSuchElementException e) {
+            } catch (InterruptedException f) {
                 return;
             }
         }

@@ -19,7 +19,9 @@ public final class Pizzeria {
 
     Warehouse warehouse;
     Order orderOfRequests;
+    OrdersAdder ordersAdder;
     DeliveryMan[] deliveryMen;
+    Baker[] bakers;
 
     /**
      * Too many params, they could be passed by an object.
@@ -47,15 +49,39 @@ public final class Pizzeria {
         warehouse = new Warehouse(warehouseCapacityGot);
         orderOfRequests = new Order();
         deliveryMen = new DeliveryMan[amountDeliversGot];
-        new OrdersAdder(ordersAmountGot, this, timeBetwOrdersGot);
+        bakers = new Baker[amountBakersGot];
+        ordersAdder = new OrdersAdder(ordersAmountGot, this, timeBetwOrdersGot);
 
         for (int i = 1; i <= amountBakersGot; i++) {
-            new Baker(i, bakersQuality, this);
+            Baker baker = new Baker(i, bakersQuality, this);
+            bakers[i - 1] = baker;
         }
 
         for (int i = 1; i <= amountDeliversGot; i++) {
             DeliveryMan deliver = new DeliveryMan(i, deliversSpeed, this);
             deliveryMen[i - 1] = deliver;
+        }
+
+        for (int i = 0; i < amountBakers; i++) {
+            try {
+                this.bakers[i].thread.join();
+            } catch (InterruptedException e) {
+                return;
+            }
+        }
+
+        for (int i = 0; i < amountDelivers; i++) {
+            try {
+                this.deliveryMen[i].thread.join();
+            } catch (InterruptedException e) {
+                return;
+            }
+        }
+
+        try {
+            this.ordersAdder.thread.join();
+        } catch (InterruptedException e) {
+            return;
         }
     }
 

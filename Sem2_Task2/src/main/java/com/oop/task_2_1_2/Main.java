@@ -19,9 +19,9 @@ import java.nio.file.Paths;
  */
 
 public class Main {
-    public static void main(final String[] args) throws InterruptedException, IOException {
+    public static void main(final String[] args) throws IOException {
 
-        Path path = Paths.get("pizzeriaParams.json");
+        Path path = Paths.get("..\\Sem2_Task2\\pizzeriaParams.json");
         String jsonString = new String(Files.readAllBytes(path));
         Gson gson = new Gson();
         Params parameters = gson.fromJson(jsonString, Params.class);
@@ -29,12 +29,8 @@ public class Main {
         Pizzeria bestPizza = new Pizzeria(parameters.warehouseCapacity, parameters.bakersAmount,
                 parameters.deliversAmount, parameters.ordersAmount, parameters.timeBetwOrders);
 
-        for (int i = 0; i < parameters.deliversAmount; i++) {
-            bestPizza.deliveryMen[i].thread.join();
-        }
-
         Outputs rez = bestPizza.results();
-        File file = new File("Recommendations.json");
+        File file = new File("..\\Sem2_Task2\\Recommendations.json");
         file.delete();
 
         FileOutputStream os = new FileOutputStream("Recommendations.json", true);
