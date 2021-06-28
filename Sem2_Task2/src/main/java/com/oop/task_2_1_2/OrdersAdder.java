@@ -1,7 +1,7 @@
 package com.oop.task_2_1_2;
 
 /**
- * Parallel putting pizza requests into order
+ * Parallel putting pizza requests into order.
  */
 
 public final class OrdersAdder implements Runnable {
@@ -17,7 +17,7 @@ public final class OrdersAdder implements Runnable {
      * @param timeBetweenOrdersGot frequency in which requests come
      */
 
-    OrdersAdder(final int amountOrdersGot, final Pizzeria pizzeriaNameGot, final long timeBetweenOrdersGot){
+    OrdersAdder(final int amountOrdersGot, final Pizzeria pizzeriaNameGot, final long timeBetweenOrdersGot) {
         thread = new Thread(this, "Order Putter");
         this.amountOrders = amountOrdersGot;
         this.pizzeriaName = pizzeriaNameGot;

@@ -1,7 +1,7 @@
 package com.oop.task_2_1_2;
 
 /**
- * recommendations program can give
+ * recommendations program can give.
  */
 enum Recommendations {
     STAFF_IS_OK,

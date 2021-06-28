@@ -1,9 +1,7 @@
 package com.oop.task_2_1_2;
 
-import java.util.NoSuchElementException;
-
 /**
- * Concurrent delivers who take pizza from warehouse and deliver it to destination
+ * Concurrent delivers who take pizza from warehouse and deliver it to destination.
  * go home when no orders are expected to come and all pizza is delivered
  */
 
@@ -24,7 +22,7 @@ public final class DeliveryMan implements Runnable {
     }
 
     /**
-     * takes pizza from warehouse if it is there and delivers it deliverySpeed time
+     * takes pizza from warehouse if it is there and delivers it deliverySpeed time.
      * says to pizzeria that one pizza was delivered
      * if pizza was being delivered too late, it is free
      * @param pizza - pizza to be delivered

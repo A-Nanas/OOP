@@ -3,7 +3,7 @@ package com.oop.task_2_1_2;
 import java.util.concurrent.ArrayBlockingQueue;
 
 /**
- * contains Pizza not more than capacity
+ * Contains Pizza not more than capacity.
  */
 
 public final class Warehouse {
@@ -16,7 +16,7 @@ public final class Warehouse {
     }
 
     /**
-     * counts if warehouse is full
+     * Counts if warehouse is full.
      * @param pizza to be added to warehouse
      * @throws InterruptedException if is interrupted
      */

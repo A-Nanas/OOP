@@ -1,7 +1,7 @@
 package com.oop.task_2_1_2;
 
 /**
- * Pizzeria with workers, warehouse and order of requests
+ * Pizzeria with workers, warehouse and order of requests.
  */
 public final class Pizzeria {
     private final int warehouseCapacity;
@@ -85,7 +85,8 @@ public final class Pizzeria {
                 }
             }
             if ((float) this.bakersQuality / this.amountBakers + (float) this.deliversSpeed / this.amountDelivers
-                    < this.timeBetwOrders + (float) this.timeWhenPizzaBecomesFree / (amountBakers + amountDelivers + 2)) {
+                    < this.timeBetwOrders
+                    + (float) this.timeWhenPizzaBecomesFree / (amountBakers + amountDelivers + 2)) {
                 float timing = (((float) this.amountBakers / (float) this.bakersQuality)
                         - ((float) this.amountDelivers / (float) this.deliversSpeed));
                 System.out.println(timing);

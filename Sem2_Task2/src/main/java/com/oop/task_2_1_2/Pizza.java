@@ -1,7 +1,7 @@
 package com.oop.task_2_1_2;
 
 /**
- * statuses pizza can have
+ * Statuses pizza can have.
  */
 enum Statuses {
     ORDERED,
@@ -24,14 +24,14 @@ public final class Pizza {
     }
 
     /**
-     * prints pizza id and status
+     * Prints pizza id and status.
      */
     void printStatus() {
         System.out.println(id + " " + statuses);
     }
 
     /**
-     * says that pizza is free
+     * Says that pizza is free.
      */
     void printLate() {
         System.out.println(id + " pizza delivered too late -> it's free!!!");

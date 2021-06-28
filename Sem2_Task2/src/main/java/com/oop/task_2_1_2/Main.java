@@ -14,7 +14,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 
 /**
- * Creates pizzeria with params taken from json file pizzeriaParams.json
+ * Creates pizzeria with params taken from json file pizzeriaParams.json.
  * and putting recommendations after ending to Recommendations.json file
  */
 
