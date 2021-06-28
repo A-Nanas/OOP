@@ -1,0 +1,7 @@
+{
+  "bakersAmount" : 2,
+  "deliversAmount" : 5,
+  "warehouseCapacity" : 3,
+  "ordersAmount" : 15,
+  "timeBetwOrders" : 200
+}
