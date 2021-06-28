@@ -1,5 +1,8 @@
 package com.oop.task_2_1_2;
 
+/**
+ * statuses pizza can have
+ */
 enum Statuses {
     ORDERED,
     BAKING,
@@ -9,22 +12,28 @@ enum Statuses {
     DELIVERED
 }
 
-public class Pizza {
+public final class Pizza {
     final int id;
     long timeWasOrdered;
     Statuses statuses;
 
-    Pizza(int id) {
+    Pizza(final int id) {
         this.id = id;
         statuses = Statuses.ORDERED;
         timeWasOrdered = System.currentTimeMillis();
     }
 
-    void printStatus(){
+    /**
+     * prints pizza id and status
+     */
+    void printStatus() {
         System.out.println(id + " " + statuses);
     }
 
-    void printLate(){
+    /**
+     * says that pizza is free
+     */
+    void printLate() {
         System.out.println(id + " pizza delivered too late -> it's free!!!");
     }
 }

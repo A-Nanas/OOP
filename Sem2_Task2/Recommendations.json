@@ -1,4 +1,4 @@
 {
-  "recommendsForStaff": "STAFF_IS_OK",
-  "recommendsForWarehouse": "INCREASE_WAREHOUSE"
+  "recommendsForStaff": "ADD_DELIVERS",
+  "recommendsForWarehouse": "WAREHOUSE_IS_OK"
 }

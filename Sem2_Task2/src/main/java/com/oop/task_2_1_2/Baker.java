@@ -2,23 +2,35 @@ package com.oop.task_2_1_2;
 
 import java.util.NoSuchElementException;
 
-public class Baker implements Runnable{
-    int id;
+/**
+ * Concurrent bakers take pizza to bake if ordered
+ * and put it to warehouse
+ * go home when no orders are expected to come and all orders are already baked
+ */
+
+public final class Baker implements Runnable {
+    final int id;
     private final int bakerQuality;
     Thread thread;
     Pizzeria employment;
 
-    Baker(int id, int bakerQuality, Pizzeria employment) {
+    Baker(final int idGot, final int bakerQualityGot, final Pizzeria employmentGot) {
         thread = new Thread(this, "Baker");
-        this.id = id;
-        this.bakerQuality = bakerQuality;
-        this.employment = employment;
+        this.id = idGot;
+        this.bakerQuality = bakerQualityGot;
+        this.employment = employmentGot;
 
-        System.out.println("Baker number " + id + " is ready to bake");
+        System.out.println("Baker number " + idGot + " is ready to bake");
         thread.start();
     }
 
-    void bake(Pizza pizza) throws InterruptedException {
+    /**
+     * bakes pizza for bakerQuality of time
+     * @param pizza - pizza to be baked
+     * @throws InterruptedException if interrupted
+     */
+
+    void bake(final Pizza pizza) throws InterruptedException {
         pizza.statuses = Statuses.BAKING;
         pizza.printStatus();
 
@@ -26,8 +38,14 @@ public class Baker implements Runnable{
         pizza.statuses = Statuses.BAKED;
         pizza.printStatus();
     }
-    
-    void putToWarehouse(Pizza pizza) throws InterruptedException {
+
+    /**
+     * puts pizza to warehouse; if it is full waits for place
+     * @param pizza - pizza to be put
+     * @throws InterruptedException
+     */
+
+    void putToWarehouse(final Pizza pizza) throws InterruptedException {
         pizza.statuses = Statuses.IN_WARE_HOUSE;
         pizza.printStatus();
         employment.warehouse.add(pizza);
@@ -35,19 +53,19 @@ public class Baker implements Runnable{
 
     @Override
     public void run() {
-        while(employment.ordersStillCome || (!employment.orderOfRequests.isEmpty())) {
+        while (employment.ordersStillCome || (!employment.orderOfRequests.isEmpty())) {
             try {
-                try{
+                try {
                     Pizza piz;
                     piz = employment.orderOfRequests.take();
-                    if(piz != null) {
+                    if (piz != null) {
                         this.bake(piz);
                         this.putToWarehouse(piz);
                     }
-                } catch (InterruptedException f){
+                } catch (InterruptedException f) {
                     return;
                 }
-            }catch (NoSuchElementException e){
+            } catch (NoSuchElementException e) {
                 return;
             }
         }

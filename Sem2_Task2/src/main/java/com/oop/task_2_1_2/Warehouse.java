@@ -1,25 +1,37 @@
 package com.oop.task_2_1_2;
 
-import java.util.NoSuchElementException;
 import java.util.concurrent.ArrayBlockingQueue;
 
-public class Warehouse {
-    ArrayBlockingQueue<Pizza> warehouse;
+/**
+ * contains Pizza not more than capacity
+ */
+
+public final class Warehouse {
+    private final ArrayBlockingQueue<Pizza> warehouse;
     int timesWarehouseIsFull;
 
-    Warehouse (int capacity) {
+    Warehouse(final int capacity) {
         warehouse = new ArrayBlockingQueue<>(capacity, true);
         timesWarehouseIsFull = 0;
     }
 
-    public void add(Pizza pizza) throws InterruptedException {
+    /**
+     * counts if warehouse is full
+     * @param pizza to be added to warehouse
+     * @throws InterruptedException if is interrupted
+     */
+    public void add(final Pizza pizza) throws InterruptedException {
         warehouse.put(pizza);
-        if(pizza != null && warehouse.remainingCapacity() == 0){
+        if (pizza != null && warehouse.remainingCapacity() == 0) {
             timesWarehouseIsFull++;
         }
     }
 
-    public synchronized Pizza take() throws NoSuchElementException {
+    /**
+     *
+     * @return pizza if warehouse is not empty, else returns null
+     */
+    public Pizza take() {
         return warehouse.poll();
     }
 }

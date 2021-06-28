@@ -1,17 +1,27 @@
 package com.oop.task_2_1_2;
 
-public class OrdersAdder implements Runnable{
+/**
+ * Parallel putting pizza requests into order
+ */
+
+public final class OrdersAdder implements Runnable {
     private int id = 1;
     int amountOrders;
     long timeBetweenOrders;
     Thread thread;
     Pizzeria pizzeriaName;
 
-    OrdersAdder(int amountOrders, Pizzeria pizzeriaName, long timeBetweenOrders){
+    /**
+     * @param amountOrdersGot amount of pizza requests to be put into Order
+     * @param pizzeriaNameGot pizzeria name
+     * @param timeBetweenOrdersGot frequency in which requests come
+     */
+
+    OrdersAdder(final int amountOrdersGot, final Pizzeria pizzeriaNameGot, final long timeBetweenOrdersGot){
         thread = new Thread(this, "Order Putter");
-        this.amountOrders = amountOrders;
-        this.pizzeriaName = pizzeriaName;
-        this.timeBetweenOrders = timeBetweenOrders;
+        this.amountOrders = amountOrdersGot;
+        this.pizzeriaName = pizzeriaNameGot;
+        this.timeBetweenOrders = timeBetweenOrdersGot;
         try {
             Thread.sleep(6000);
         } catch (InterruptedException e) {
@@ -22,7 +32,7 @@ public class OrdersAdder implements Runnable{
 
     @Override
     public void run() {
-        while(id <= amountOrders) {
+        while (id <= amountOrders) {
             Pizza piz = new Pizza(id);
             pizzeriaName.orderOfRequests.add(piz);
             pizzeriaName.pizzasInWork++;

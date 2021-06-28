@@ -1,6 +1,9 @@
 package com.oop.task_2_1_2;
 
-enum Recommendations{
+/**
+ * recommendations program can give
+ */
+enum Recommendations {
     STAFF_IS_OK,
     ADD_DELIVERS,
     ADD_BAKERS,
